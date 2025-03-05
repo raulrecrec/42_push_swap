@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:08 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/05 18:34:13 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/05 18:46:25 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "42_ft_printf/ft_printf.h"
+# include "42_libft/libft.h"
 
 // Función principal donde el main enviará el stack a
 void	push_swap(int *stack_a, int size);
