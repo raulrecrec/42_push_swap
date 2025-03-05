@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:08 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/05 18:29:30 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/05 18:34:13 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,23 @@
 # include <unistd.h>
 # include "42_ft_printf/ft_printf.h"
 
-// Prototipos de funciones principales
-void    push_swap(int *stack_a, int size);
-void    parse_arguments(int argc, char **argv, int **stack, int *size);
-void    swap_a(int *stack, int size);
-void    push_a(int *stack_a, int *size_a, int *stack_b, int *size_b);
-void    rotate_a(int *stack, int size);
-void    reverse_rotate_a(int *stack, int size);
+// Función principal donde el main enviará el stack a
+void	push_swap(int *stack_a, int size);
+
+// Operaciones permitidas en el stack
+void	swap_a(int *stack, int size);
+void	swap_b(int *stack, int size);
+void	swap_ab(int *stack_a, int *stack_b, int size_a, int size_b);
+
+void	push_a(int *stack_a, int *size_a, int *stack_b, int *size_b);
+void	push_b(int *stack_b, int *size_b, int *stack_a, int *size_a);
+
+void	rotate_a(int *stack, int size);
+void	rotate_b(int *stack, int size);
+void	rotate_ab(int *stack_a, int *stack_b, int size_a, int size_b);
+
+void	reverse_rotate_a(int *stack, int size);
+void	reverse_rotate_b(int *stack, int size);
+void	reverse_rotate_ab(int *stack_a, int *stack_b, int size_a, int size_b);
 
 #endif
