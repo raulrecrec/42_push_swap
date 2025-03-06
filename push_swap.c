@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:05 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/06 17:22:07 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/06 17:24:57 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,8 @@ int	validate_arguments(int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	if (argc < 2)
-	{
-		ft_printf("Error\n");
-		return (EXIT_FAILURE);
-	}
+		clean_exit();
 	if (!validate_arguments(argc, argv))
-	{
-		ft_printf("Error\n");
-		return (EXIT_FAILURE);
-	}
+		clean_exit();
 	return (1);
 }
