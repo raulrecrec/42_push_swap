@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:05 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/06 18:03:30 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/06 19:20:36 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	push_swap(int *stack_a, int size);
 int	clean_exit(void)
 {
 	ft_printf("Error\n");
-	return (EXIT_FAILURE);
+	exit(EXIT_FAILURE);
 }
 
 int check_duplicates(int *stack, int size)
@@ -115,7 +115,7 @@ int	validate_arguments(int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	if (argc < 2)
-		return (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	if (!validate_arguments(argc, argv))
 		clean_exit();
 	argv_to_int(argc, argv);
