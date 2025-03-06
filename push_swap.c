@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:05 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/06 17:25:54 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/06 18:03:30 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,25 +19,46 @@ int	clean_exit(void)
 	ft_printf("Error\n");
 	return (EXIT_FAILURE);
 }
-int *argv_to_int(int argc, char **argv)
+
+int check_duplicates(int *stack, int size)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < size)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (stack[i] == stack[j])
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
+
+int	*argv_to_int(int argc, char **argv)
 {
 	int	i;
 	int	*stack_a;
 	
 	stack_a = malloc((argc - 1) * sizeof(int));
 	if (!stack_a)
-	{
-		write(2, "Error\n", 6);
-		exit(EXIT_FAILURE);
-	}
+		clean_exit();
 	i = 1;
 	while (i < argc)
 	{
 		stack_a[i - 1] = ft_atoi(argv[i]);
 		i++;
 	}
+	if (!check_duplicates(stack_a, argc - 1))
+		clean_exit();
 	return (stack_a);
 }
+
 long long	ft_atoll(const char *nptr)
 {
 	long long	res;
@@ -94,8 +115,9 @@ int	validate_arguments(int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	if (argc < 2)
-		clean_exit();
+		return (EXIT_FAILURE);
 	if (!validate_arguments(argc, argv))
 		clean_exit();
+	argv_to_int(argc, argv);
 	return (1);
 }
