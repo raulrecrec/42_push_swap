@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:05 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/05 20:15:29 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/06 16:37:26 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,35 @@
 
 void	push_swap(int *stack_a, int size);
 
+long long	ft_atoll(const char *nptr)
+{
+	long long	res;
+	long long	sig;
+
+	res = 0;
+	sig = 1;
+	while (*nptr == ' ' || *nptr == '\t' || *nptr == '\n'
+		|| *nptr == '\v' || *nptr == '\f' || *nptr == '\r')
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
+	{
+		if (*nptr == '-')
+			sig = -sig;
+		nptr++;
+	}
+	while (*nptr >= '0' && *nptr <= '9')
+	{
+		res = res * 10 + (*nptr - '0');
+		nptr++;
+	}
+	return (sig * res);
+}
+
 int	validar_argumentos(int argc, char **argv)
 {
-	int	i;
-	int	j;
+	int			i;
+	int			j;
+	long long	check_int;
 
 	i = 1;
 	j = 0;
@@ -28,6 +53,9 @@ int	validar_argumentos(int argc, char **argv)
 			return (0);
 		if (argv[i][1] && (argv[i][j] == '-' || argv[i][j] == '+') && ft_isdigit(argv[i][j + 1]))
 			j++;
+		check_int = ft_atoll(argv[i]);
+		if (check_int > 2147483647 || check_int < -2147483648)
+			return (0);
 		while (argv[i][j])
 		{
 			if (!ft_isdigit(argv[i][j]))
