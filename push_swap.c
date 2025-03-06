@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:05 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/06 17:24:57 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/06 17:25:54 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,25 @@ int	clean_exit(void)
 {
 	ft_printf("Error\n");
 	return (EXIT_FAILURE);
+}
+int *argv_to_int(int argc, char **argv)
+{
+	int	i;
+	int	*stack_a;
+	
+	stack_a = malloc((argc - 1) * sizeof(int));
+	if (!stack_a)
+	{
+		write(2, "Error\n", 6);
+		exit(EXIT_FAILURE);
+	}
+	i = 1;
+	while (i < argc)
+	{
+		stack_a[i - 1] = ft_atoi(argv[i]);
+		i++;
+	}
+	return (stack_a);
 }
 long long	ft_atoll(const char *nptr)
 {
