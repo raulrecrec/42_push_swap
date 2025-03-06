@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:08 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/06 16:41:24 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/06 18:25:50 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@
 void		push_swap(int *stack_a, int size);
 long long	ft_atoll(const char *nptr);
 int			validate_arguments(int argc, char **argv);
+int			clean_exit(void);
+int 		check_duplicates(int *stack, int size);
+int			*argv_to_int(int argc, char **argv);
 
 // Operaciones permitidas en el stack
 void	swap_a(int *stack, int size);
