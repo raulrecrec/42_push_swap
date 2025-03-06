@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:05 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/06 16:50:56 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/06 17:22:07 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 void	push_swap(int *stack_a, int size);
 
+int	clean_exit(void)
+{
+	ft_printf("Error\n");
+	return (EXIT_FAILURE);
+}
 long long	ft_atoll(const char *nptr)
 {
 	long long	res;
