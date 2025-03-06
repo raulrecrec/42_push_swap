@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:08 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/05 18:46:25 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/06 16:41:24 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 # include "42_ft_printf/ft_printf.h"
 # include "42_libft/libft.h"
 
-// Función principal donde el main enviará el stack a
-void	push_swap(int *stack_a, int size);
+// push_swap.c 
+void		push_swap(int *stack_a, int size);
+long long	ft_atoll(const char *nptr);
+int			validate_arguments(int argc, char **argv);
 
 // Operaciones permitidas en el stack
 void	swap_a(int *stack, int size);
