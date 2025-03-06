@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:05 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/06 16:39:26 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/06 16:50:56 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,13 @@ int	main(int argc, char **argv)
 {
 	if (argc < 2)
 	{
-		ft_printf("Error: no hay numeros para ordenar\n");
-		return (0);
+		ft_printf("Error\n");
+		return (EXIT_FAILURE);
 	}
 	if (!validate_arguments(argc, argv))
 	{
-		ft_printf("Error: el stack tiene un formato incorrecto\n");
-		return (0);
+		ft_printf("Error\n");
+		return (EXIT_FAILURE);
 	}
 	return (1);
 }
