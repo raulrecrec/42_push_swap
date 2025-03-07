@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 19:26:02 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/07 01:50:24 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/07 12:36:51 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,36 @@ int	push_a(int **stack_a, int **stack_b, int size_a, int size_b)
 		ft_memmove(aux, *stack_b + 1, (size_b - 1) * sizeof(int));
 		free(*stack_b);
 		*stack_b = aux;
+	}
+	return (1);
+}
+
+int	push_b(int **stack_a, int **stack_b, int size_a, int size_b)
+{
+	int	*aux;
+
+	if (!stack_a || !*stack_a || !stack_b || !*stack_b || size_a == 0)
+		return (0);
+	aux = malloc((size_b + 1) * sizeof(int));
+	if (!aux)
+		return(NULL);
+	ft_memmove(aux + 1, *stack_b, size_b * sizeof(int));
+	free(*stack_b);
+	*stack_b = aux;
+	(*stack_b)[0] = (*stack_a)[0];
+	if (size_a == 1)
+	{
+		free(*stack_a);
+		*stack_a = NULL;
+	}
+	else
+	{
+		aux = malloc((size_a - 1) * sizeof(int));
+		if (!aux)
+			return(NULL);
+		ft_memmove(aux, *stack_a + 1, (size_a - 1) * sizeof(int));
+		free(*stack_a);
+		*stack_a = aux;
 	}
 	return (1);
 }
