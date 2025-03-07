@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 19:26:02 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/07 12:36:51 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/07 13:04:00 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	push_a(int **stack_a, int **stack_b, int size_a, int size_b)
 		return (0);
 	aux = malloc((size_a + 1) * sizeof(int));
 	if (!aux)
-		return(NULL);
+		return(0);
 	ft_memmove(aux + 1, *stack_a, size_a * sizeof(int));
 	free(*stack_a);
 	*stack_a = aux;
@@ -65,7 +65,7 @@ int	push_a(int **stack_a, int **stack_b, int size_a, int size_b)
 	{
 		aux = malloc((size_b - 1) * sizeof(int));
 		if (!aux)
-			return(NULL);
+			return(0);
 		ft_memmove(aux, *stack_b + 1, (size_b - 1) * sizeof(int));
 		free(*stack_b);
 		*stack_b = aux;
@@ -81,7 +81,7 @@ int	push_b(int **stack_a, int **stack_b, int size_a, int size_b)
 		return (0);
 	aux = malloc((size_b + 1) * sizeof(int));
 	if (!aux)
-		return(NULL);
+		return(0);
 	ft_memmove(aux + 1, *stack_b, size_b * sizeof(int));
 	free(*stack_b);
 	*stack_b = aux;
@@ -95,10 +95,32 @@ int	push_b(int **stack_a, int **stack_b, int size_a, int size_b)
 	{
 		aux = malloc((size_a - 1) * sizeof(int));
 		if (!aux)
-			return(NULL);
+			return(0);
 		ft_memmove(aux, *stack_a + 1, (size_a - 1) * sizeof(int));
 		free(*stack_a);
 		*stack_a = aux;
 	}
 	return (1);
+}
+
+void	rotate_a(int *stack_a, int size_a)
+{
+	int	aux;
+
+	if (!stack_a || size_a <= 1)
+		return ;
+	aux = stack_a[size_a - 1];
+	ft_memmove(stack_a + 1, stack_a, (size_a - 1) * sizeof(int));
+	stack_a[0] = aux;
+}
+
+void	rotate_b(int *stack_b, int size_b)
+{
+	int	aux;
+
+	if (!stack_b || size_b <= 1)
+		return ;
+	aux = stack_b[size_b - 1];
+	ft_memmove(stack_b + 1, stack_b, (size_b - 1) * sizeof(int));
+	stack_b[0] = aux;
 }
