@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:05 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/06 19:20:36 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/07 13:16:19 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,10 +114,12 @@ int	validate_arguments(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
+	int	*stack_a;
+
 	if (argc < 2)
 		exit(EXIT_FAILURE);
 	if (!validate_arguments(argc, argv))
 		clean_exit();
-	argv_to_int(argc, argv);
+	stack_a = argv_to_int(argc, argv);
 	return (1);
 }
