@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:08 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/07 18:58:14 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/07 19:46:56 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,9 @@ int			push_a(int **stack_a, int **stack_b, int size_a, int size_b);
 int			push_b(int **stack_a, int **stack_b, int size_a, int size_b);
 void		rotate_a(int *stack_a, int size_a);
 void		rotate_b(int *stack_b, int size_b);
-
-// Operaciones permitidas en el stack pendientes de hacer
-void	rotate_ab(int *stack_a, int *stack_b, int size_a, int size_b);
-void	reverse_rotate_a(int *stack, int size);
-void	reverse_rotate_b(int *stack, int size);
-void	reverse_rotate_ab(int *stack_a, int *stack_b, int size_a, int size_b);
+void		rotate_ab(int *stack_a, int *stack_b, int size_a, int size_b);
+void		reverse_rotate_a(int *stack_a, int size_a);
+void		reverse_rotate_b(int *stack_b, int size_b);
+void		reverse_rotate_ab(int *stack_a, int *stack_b, int size_a, int size_b);
 
 #endif
