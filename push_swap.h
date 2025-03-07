@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:08 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/06 18:25:50 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/07 01:49:22 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,14 @@ int			clean_exit(void);
 int 		check_duplicates(int *stack, int size);
 int			*argv_to_int(int argc, char **argv);
 
-// Operaciones permitidas en el stack
-void	swap_a(int *stack, int size);
-void	swap_b(int *stack, int size);
-void	swap_ab(int *stack_a, int *stack_b, int size_a, int size_b);
+// stack_moves.c
+int			swap_a(int *stack_a, int size);
+int			swap_b(int *stack_b, int size);
+int			swap_ab(int *stack_a, int *stack_b, int size_a, int size_b);
+int			push_a(int **stack_a, int **stack_b, int size_a, int size_b);
 
-void	push_a(int *stack_a, int *size_a, int *stack_b, int *size_b);
-void	push_b(int *stack_b, int *size_b, int *stack_a, int *size_a);
+// Operaciones permitidas en el stack pendientes de hacer
+void	push_b(int **stack_b, int **size_b, int *stack_a, int *size_a);
 
 void	rotate_a(int *stack, int size);
 void	rotate_b(int *stack, int size);
