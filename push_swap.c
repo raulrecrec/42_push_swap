@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:05 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/07 13:16:19 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/13 15:38:30 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,18 @@
 
 void	push_swap(int *stack_a, int size);
 
-int	clean_exit(void)
+void	clean_exit(int **stack)
 {
+	if (stack && *stack)
+	{
+		free(*stack);
+		*stack = NULL;
+	}
 	ft_printf("Error\n");
 	exit(EXIT_FAILURE);
 }
 
-int check_duplicates(int *stack, int size)
+void	check_duplicates(int **stack, int size)
 {
 	int	i;
 	int	j;
@@ -31,31 +36,33 @@ int check_duplicates(int *stack, int size)
 		j = i + 1;
 		while (j < size)
 		{
-			if (stack[i] == stack[j])
-				return (0);
+			if ((*stack)[i] == (*stack)[j])
+				clean_exit(stack);
 			j++;
 		}
 		i++;
 	}
-	return (1);
 }
 
 int	*argv_to_int(int argc, char **argv)
 {
-	int	i;
-	int	*stack_a;
+	int			i;
+	int			*stack_a;
+	long long	num;
 	
 	stack_a = malloc((argc - 1) * sizeof(int));
 	if (!stack_a)
-		clean_exit();
+		clean_exit(NULL);
 	i = 1;
 	while (i < argc)
 	{
-		stack_a[i - 1] = ft_atoi(argv[i]);
+		num = ft_atoll(argv[i]);
+		if (num > 2147483647 || num < -2147483648)
+			clean_exit(&stack_a);
+		stack_a[i - 1] = (int)num;
 		i++;
 	}
-	if (!check_duplicates(stack_a, argc - 1))
-		clean_exit();
+	check_duplicates(&stack_a, argc - 1);
 	return (stack_a);
 }
 
@@ -83,7 +90,7 @@ long long	ft_atoll(const char *nptr)
 	return (sig * res);
 }
 
-int	validate_arguments(int argc, char **argv)
+void	validate_arguments(int argc, char **argv)
 {
 	int			i;
 	int			j;
@@ -95,21 +102,21 @@ int	validate_arguments(int argc, char **argv)
 	{
 		j = 0;
 		if (argv[i][0] == '\0')
-			return (0);
-		if (argv[i][1] && (argv[i][j] == '-' || argv[i][j] == '+') && ft_isdigit(argv[i][j + 1]))
+			clean_exit(NULL);
+		if (argv[i][1] && (argv[i][j] == '-' || argv[i][j] == '+')
+			&& ft_isdigit(argv[i][j + 1]))
 			j++;
 		check_int = ft_atoll(argv[i]);
 		if (check_int > 2147483647 || check_int < -2147483648)
-			return (0);
+			clean_exit(NULL);
 		while (argv[i][j])
 		{
 			if (!ft_isdigit(argv[i][j]))
-				return (0);
+				clean_exit(NULL);
 			j++;
 		}
 		i++;
 	}
-	return (1);
 }
 
 int	main(int argc, char **argv)
@@ -118,8 +125,11 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		exit(EXIT_FAILURE);
-	if (!validate_arguments(argc, argv))
-		clean_exit();
+	validate_arguments(argc, argv);
 	stack_a = argv_to_int(argc, argv);
-	return (1);
+
+	//push_swap(stack_a, argc - 1) cuando lo tenga listo
+
+	free(stack_a);
+	return (0);
 }
