@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 19:26:02 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/07 19:43:15 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/12 19:54:43 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,7 +154,6 @@ void	reverse_rotate_b(int *stack_b, int size_b)
 	ft_memmove(stack_b + 1, stack_b, (size_b - 1) * sizeof(int));
 	stack_b[0] = aux;
 }
-
 
 void	reverse_rotate_ab(int *stack_a, int *stack_b, int size_a, int size_b)
 {
