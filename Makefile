@@ -6,7 +6,7 @@
 #    By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/05 17:38:10 by rexposit          #+#    #+#              #
-#    Updated: 2025/03/07 13:02:57 by rexposit         ###   ########.fr        #
+#    Updated: 2025/03/13 15:54:03 by rexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,9 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I$(LIBFT_DIR) -I$(PRINTF_DIR)
 
 # Archivos fuente de push_swap
-SRCS = push_swap.c \
-	stack_moves.c	\
+SRCS = push_swap.c		\
+	stack_moves.c		\
+	algorithm_utils.c	\
 
 # Convertimos los archivos .c en .o
 OBJS = $(SRCS:.c=.o)
