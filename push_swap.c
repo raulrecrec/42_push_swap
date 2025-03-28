@@ -6,13 +6,19 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:05 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/13 15:38:30 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/28 18:04:06 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(int *stack_a, int size);
+void	push_swap(int *stack_a, int size)
+{
+	if (size <= 3)
+	{
+		sort_three(stack_a, size);
+	}
+}
 
 void	clean_exit(int **stack)
 {
@@ -127,9 +133,12 @@ int	main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	validate_arguments(argc, argv);
 	stack_a = argv_to_int(argc, argv);
-
-	//push_swap(stack_a, argc - 1) cuando lo tenga listo
-
+	if (is_sorted(stack_a, argc - 1))
+	{
+		free(stack_a);
+		return (0);
+	}
+	push_swap(stack_a, argc - 1);
 	free(stack_a);
 	return (0);
 }
