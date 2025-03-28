@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:05 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/28 18:04:06 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/28 19:13:06 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	push_swap(int *stack_a, int size)
 {
+	if (is_sorted(stack_a, size))
+		return ;
 	if (size <= 3)
-	{
 		sort_three(stack_a, size);
-	}
 }
 
 void	clean_exit(int **stack)
