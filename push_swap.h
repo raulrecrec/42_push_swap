@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:08 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/13 15:54:20 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/03/28 18:03:47 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,6 @@ void		reverse_rotate_b(int *stack_b, int size_b);
 void		reverse_rotate_ab(int *stack_a, int *stack_b, int size_a, int size_b);
 
 // algorithm_utils.c
-int			is_sorted(int *stack, int size)
-
+int			is_sorted(int *stack, int size);
+void		sort_three(int *stack_a, int size);
 #endif
