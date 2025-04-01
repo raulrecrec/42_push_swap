@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 15:45:00 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/28 19:13:13 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/01 16:12:28 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,24 @@ int	is_sorted(int *stack, int size)
 		i++;
 	}
 	return (1);
+}
+
+void	find_min_stack(int *stack, int size, int *min_value, int *min_idex)
+{
+	int	i;
+
+	*min_value = stack[0];
+	*min_idex = 0;
+	i = 1;
+	while (i < size)
+	{
+		if (stack[i] < *min_value)
+		{
+			*min_value = stack[i];
+			*min_idex = i;
+		}
+		i++;
+	}
 }
 
 void	sort_three(int *stack_a, int size)
@@ -49,4 +67,9 @@ void	sort_three(int *stack_a, int size)
 		rotate_a(stack_a, size);
 		swap_a(stack_a, size);
 	}
+}
+
+void	sort_five(int *stack_a, int size)
+{
+	
 }
