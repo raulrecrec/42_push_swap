@@ -6,20 +6,26 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:05 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/28 19:14:19 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/02 02:37:58 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(int *stack_a, int size)
+void	push_swap(int *stack_a, int size_a)
 {
-	if (is_sorted(stack_a, size))
-		return ;
-	if (size <= 3)
-		sort_three(stack_a, size);
-	else if (size > 3 && size <= 5)
-		sort_five(stack_a, size);
+	int	*stack_b;
+	int	size_b;
+
+	size_b = 0;
+	stack_b = malloc(0);
+	if (size_a == 2)
+		swap_a(stack_a, size_a);
+	else if (size_a == 3)
+		sort_three(stack_a, size_a);
+	else if (size_a > 3 && size_a <= 5)
+		sort_five(&stack_a, &stack_b, &size_a, &size_b);
+	free(stack_b);
 }
 
 void	clean_exit(int **stack)
