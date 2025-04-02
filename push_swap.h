@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:08 by rexposit          #+#    #+#             */
-/*   Updated: 2025/04/02 04:10:15 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/02 05:07:28 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,8 @@ void		sort_five(int **stack_a, int **stack_b, int *size_a, int *size_b);
 void		find_min_stack(int *stack, int size, int *min_index);
 void		push_min_to_b_case4(int **stack_a, int **stack_b, int *size_a, int *size_b, int min_index);
 void		push_min_to_b_case5(int **stack_a, int **stack_b, int *size_a, int *size_b, int min_index);
+
+//radix_sort.c
+int			*convert_to_indexed(int *stack, int size);
 
 #endif
