@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 15:45:00 by rexposit          #+#    #+#             */
-/*   Updated: 2025/04/02 13:57:57 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/02 14:05:29 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,55 +73,55 @@ void	sort_three(int *stack_a, int size)
 void	push_min_to_b_case4(int **stack_a, int **stack_b, int *size_a, int *size_b, int min_index)
 {
 	if (min_index == 0)
-		push_b(stack_a, stack_b, size_a, size_b);
+		push_b(stack_a, stack_b, *size_a, *size_b);
 	else if (min_index == 1)
 	{
 		swap_a(*stack_a, *size_a);
-		push_b(stack_a, stack_b, size_a, size_b);
+		push_b(stack_a, stack_b, *size_a, *size_b);
 	}
 	else if (min_index == 2)
 	{
 		rotate_a(*stack_a, *size_a);
 		swap_a(*stack_a, *size_a);
-		push_b(stack_a, stack_b, size_a, size_b);
+		push_b(stack_a, stack_b, *size_a, *size_b);
 	}
 	else if (min_index == 3)
 	{
 		reverse_rotate_a(*stack_a, *size_a);
-		push_b(stack_a, stack_b, size_a, size_b);
+		push_b(stack_a, stack_b, *size_a, *size_b);
 	}
 	else if (min_index == 4)
 	{
 		reverse_rotate_a(*stack_a, *size_a);
-		push_b(stack_a, stack_b, size_a, size_b);
+		push_b(stack_a, stack_b, *size_a, *size_b);
 	}
 }
 
 void	push_min_to_b_case5(int **stack_a, int **stack_b, int *size_a, int *size_b, int min_index)
 {
 	if (min_index == 0)
-		push_b(stack_a, stack_b, size_a, size_b);
+		push_b(stack_a, stack_b, *size_a, *size_b);
 	else if (min_index == 1)
 	{
 		swap_a(*stack_a, *size_a);
-		push_b(stack_a, stack_b, size_a, size_b);
+		push_b(stack_a, stack_b, *size_a, *size_b);
 	}
 	else if (min_index == 2)
 	{
 		rotate_a(*stack_a, *size_a);
 		swap_a(*stack_a, *size_a);
-		push_b(stack_a, stack_b, size_a, size_b);
+		push_b(stack_a, stack_b, *size_a, *size_b);
 	}
 	if (min_index == 3)
 	{
 		reverse_rotate_a(*stack_a, *size_a);
 		reverse_rotate_a(*stack_a, *size_a);
-		push_b(stack_a, stack_b, size_a, size_b);
+		push_b(stack_a, stack_b, *size_a, *size_b);
 	}
 	else if (min_index == 4)
 	{
 		reverse_rotate_a(*stack_a, *size_a);
-		push_b(stack_a, stack_b, size_a, size_b);
+		push_b(stack_a, stack_b, *size_a, *size_b);
 	}
 }
 
@@ -132,19 +132,19 @@ void	sort_five(int **stack_a, int **stack_b, int *size_a, int *size_b)
 	if (*size_a == 4)
 	{
 		find_min_stack(*stack_a, *size_a, &min_index);
-		push_known_min_to_b_case4(stack_a, stack_b, size_a, size_b, min_index);
+		push_min_to_b_case4(stack_a, stack_b, size_a, size_b, min_index);
 		sort_three(*stack_a, *size_a - 1);
-		push_a(*stack_a, *stack_b, *size_a - 1, *size_b + 1);
+		push_a(stack_a, stack_b, *size_a - 1, *size_b + 1);
 	}
 	if (*size_a == 5)
 	{
 		find_min_stack(*stack_a, *size_a, &min_index);
-		push_known_min_to_b_case5(stack_a, stack_b, size_a, size_b, min_index);
+		push_min_to_b_case5(stack_a, stack_b, size_a, size_b, min_index);
 		find_min_stack(*stack_a, *size_a, &min_index);
-		push_known_min_to_b_case5(stack_a, stack_b, size_a, size_b, min_index);
+		push_min_to_b_case5(stack_a, stack_b, size_a, size_b, min_index);
 		sort_three(*stack_a, *size_a - 2);
-		push_a(*stack_a, *stack_b, *size_a - 1, *size_b + 2);
-		push_a(*stack_a, *stack_b, *size_a - 1, *size_b + 1);
+		push_a(stack_a, stack_b, *size_a - 1, *size_b + 2);
+		push_a(stack_a, stack_b, *size_a - 1, *size_b + 1);
 		swap_a(*stack_a, *size_a);
 	}
 }
