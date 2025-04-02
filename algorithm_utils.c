@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 15:45:00 by rexposit          #+#    #+#             */
-/*   Updated: 2025/04/02 04:10:37 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/02 13:57:57 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,6 @@ void	push_min_to_b_case5(int **stack_a, int **stack_b, int *size_a, int *size_b,
 
 void	sort_five(int **stack_a, int **stack_b, int *size_a, int *size_b)
 {
-	int	i;
 	int	min_index;
 
 	if (*size_a == 4)
