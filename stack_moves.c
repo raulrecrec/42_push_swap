@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 19:26:02 by rexposit          #+#    #+#             */
-/*   Updated: 2025/03/12 19:54:43 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/02 04:18:59 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	push_a(int **stack_a, int **stack_b, int size_a, int size_b)
 {
 	int	*aux;
 
-	if (!stack_a || !*stack_a || !stack_b || !*stack_b || size_b == 0)
+	if (!stack_a || !*stack_a || !stack_b || !*stack_b)
 		return (0);
 	aux = malloc((size_a + 1) * sizeof(int));
 	if (!aux)
@@ -77,7 +77,7 @@ int	push_b(int **stack_a, int **stack_b, int size_a, int size_b)
 {
 	int	*aux;
 
-	if (!stack_a || !*stack_a || !stack_b || !*stack_b || size_a == 0)
+	if (!stack_a || !*stack_a || !stack_b || !*stack_b)
 		return (0);
 	aux = malloc((size_b + 1) * sizeof(int));
 	if (!aux)
