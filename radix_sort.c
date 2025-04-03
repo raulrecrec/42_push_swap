@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 03:59:39 by rexposit          #+#    #+#             */
-/*   Updated: 2025/04/02 05:06:16 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/03 14:47:22 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,14 @@ int	*convert_to_indexed(int *stack, int size)
 		i++;
 	}
 	return (stack_indexed);
+}
+
+void	radix_sort(int **stack_a, int **stack_b, int *size_a, int *size_b)
+{
+	int	max_bits;
+
+	max_bits = 0;
+	while (*stack_a[*size_a - 1] >> max_bits)
+		max_bits++;
+
 }
