@@ -6,11 +6,24 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 03:59:39 by rexposit          #+#    #+#             */
-/*   Updated: 2025/04/03 14:47:22 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/08 00:55:52 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	get_max_value(int *stack, int size)
+{
+	int	i = 0;
+	int	max = stack[0];
+
+	while (++i < size)
+	{
+		if (stack[i] > max)
+			max = stack[i];
+	}
+	return (max);
+}
 
 int	*convert_to_indexed(int *stack, int size)
 {
