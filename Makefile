@@ -6,7 +6,7 @@
 #    By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/05 17:38:10 by rexposit          #+#    #+#              #
-#    Updated: 2025/04/02 05:07:48 by rexposit         ###   ########.fr        #
+#    Updated: 2025/04/08 01:54:05 by rexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ CFLAGS = -Wall -Wextra -Werror -I$(LIBFT_DIR) -I$(PRINTF_DIR)
 SRCS = push_swap.c		\
 	stack_moves.c		\
 	algorithm_utils.c	\
-	radix_sort.C		\
+	radix_sort.c		\
 
 # Convertimos los archivos .c en .o
 OBJS = $(SRCS:.c=.o)
