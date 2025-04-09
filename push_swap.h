@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:08 by rexposit          #+#    #+#             */
-/*   Updated: 2025/04/08 00:56:02 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/08 02:18:00 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int			*argv_to_int(int argc, char **argv);
 int			swap_a(int *stack_a, int size);
 int			swap_b(int *stack_b, int size);
 int			swap_ab(int *stack_a, int *stack_b, int size_a, int size_b);
-int			push_a(int **stack_a, int **stack_b, int size_a, int size_b);
-int			push_b(int **stack_a, int **stack_b, int size_a, int size_b);
+int			push_a(int **stack_a, int **stack_b, int *size_a, int *size_b);
+int			push_b(int **stack_a, int **stack_b, int *size_a, int *size_b);
 void		rotate_a(int *stack_a, int size_a);
 void		rotate_b(int *stack_b, int size_b);
 void		rotate_ab(int *stack_a, int *stack_b, int size_a, int size_b);
