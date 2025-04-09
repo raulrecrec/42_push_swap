@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 15:45:00 by rexposit          #+#    #+#             */
-/*   Updated: 2025/04/08 18:25:22 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/09 12:23:44 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,22 +129,16 @@ void	sort_five(int **stack_a, int **stack_b, int *size_a, int *size_b)
 	{
 		find_min_stack(*stack_a, *size_a, &min_index);
 		push_min_to_b_case4(stack_a, stack_b, size_a, size_b, min_index);
-		ft_printf("min_index: %d\n", min_index);
 		sort_three(*stack_a, *size_a);
 		push_a(stack_a, stack_b, size_a, size_b);
 	}
 	else if (*size_a == 5)
 	{
 		find_min_stack(*stack_a, *size_a, &min_index);
-		ft_printf("min_index: %d\n", min_index);
 		push_min_to_b_case5(stack_a, stack_b, size_a, size_b, min_index);
 		find_min_stack(*stack_a, *size_a, &min_index);
-		ft_printf("min_index: %d\n", min_index);
-		push_min_to_b_case5(stack_a, stack_b, size_a, size_b, min_index);
+		push_min_to_b_case4(stack_a, stack_b, size_a, size_b, min_index);
 		sort_three(*stack_a, *size_a);
-		if ((*stack_b)[0] < (*stack_b)[1])
-			swap_b(*stack_b, *size_b);
-		ft_printf("B: %d %d\n", (*stack_b)[0], (*stack_b)[1]);
 		push_a(stack_a, stack_b, size_a, size_b);
 		push_a(stack_a, stack_b, size_a, size_b);
 	}
