@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 19:26:02 by rexposit          #+#    #+#             */
-/*   Updated: 2025/04/08 02:17:45 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/09 17:50:01 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,32 +48,25 @@ int	swap_ab(int *stack_a, int *stack_b, int size_a, int size_b)
 
 int	push_a(int **stack_a, int **stack_b, int *size_a, int *size_b)
 {
-	int	*aux;
+	int	*new_a;
+	int	*new_b;
 
 	if (!stack_a || !*stack_a || !stack_b || !*stack_b || *size_b == 0)
 		return (0);
-	aux = malloc((*size_a + 1) * sizeof(int));
-	if (!aux)
+	new_a = malloc((*size_a + 1) * sizeof(int));
+	if (!new_a)
 		return (0);
-	ft_memmove(aux + 1, *stack_a, (*size_a) * sizeof(int));
+	ft_memmove(new_a + 1, *stack_a, (*size_a) * sizeof(int));
+	new_a[0] = (*stack_b)[0];
 	free(*stack_a);
-	*stack_a = aux;
-	(*stack_a)[0] = (*stack_b)[0];
+	*stack_a = new_a;
 	(*size_a)++;
-	if (*size_b == 1)
-	{
-		free(*stack_b);
-		*stack_b = NULL;
-	}
-	else
-	{
-		aux = malloc((*size_b - 1) * sizeof(int));
-		if (!aux)
-			return (0);
-		ft_memmove(aux, *stack_b + 1, (*size_b - 1) * sizeof(int));
-		free(*stack_b);
-		*stack_b = aux;
-	}
+	new_b = malloc((*size_b - 1) * sizeof(int));
+	if (!new_b)
+		return (0);
+	ft_memmove(new_b, *stack_b + 1, (*size_b - 1) * sizeof(int));
+	free(*stack_b);
+	*stack_b = new_b;
 	(*size_b)--;
 	ft_printf("pa\n");
 	return (1);
@@ -81,37 +74,29 @@ int	push_a(int **stack_a, int **stack_b, int *size_a, int *size_b)
 
 int	push_b(int **stack_a, int **stack_b, int *size_a, int *size_b)
 {
-	int	*aux;
+	int	*new_a;
+	int	*new_b;
 
 	if (!stack_a || !*stack_a || *size_a == 0)
 		return (0);
-	aux = malloc((*size_b + 1) * sizeof(int));
-	if (!aux)
+	new_b = malloc((*size_b + 1) * sizeof(int));
+	if (!new_b)
 		return (0);
-	ft_memmove(aux + 1, *stack_b, (*size_b) * sizeof(int));
+	ft_memmove(new_b + 1, *stack_b, (*size_b) * sizeof(int));
 	free(*stack_b);
-	*stack_b = aux;
+	*stack_b = new_b;
 	(*stack_b)[0] = (*stack_a)[0];
 	(*size_b)++;
-	if (*size_a == 1)
-	{
-		free(*stack_a);
-		*stack_a = NULL;
-	}
-	else
-	{
-		aux = malloc((*size_a - 1) * sizeof(int));
-		if (!aux)
-			return (0);
-		ft_memmove(aux, *stack_a + 1, (*size_a - 1) * sizeof(int));
-		free(*stack_a);
-		*stack_a = aux;
-	}
+	new_a = malloc((*size_a - 1) * sizeof(int));
+	if (!new_a)
+		return (0);
+	ft_memmove(new_a, *stack_a + 1, (*size_a - 1) * sizeof(int));
+	free(*stack_a);
+	*stack_a = new_a;
 	(*size_a)--;
 	ft_printf("pb\n");
 	return (1);
 }
-
 
 void	rotate_a(int *stack_a, int size_a)
 {

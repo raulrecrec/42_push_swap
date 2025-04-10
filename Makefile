@@ -6,7 +6,7 @@
 #    By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/05 17:38:10 by rexposit          #+#    #+#              #
-#    Updated: 2025/04/08 01:54:05 by rexposit         ###   ########.fr        #
+#    Updated: 2025/04/09 15:08:55 by rexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ PRINTF_DIR = 42_ft_printf
 
 # Compilador y flags
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I$(LIBFT_DIR) -I$(PRINTF_DIR)
+CFLAGS = -Wall -Wextra -Werror -g -I$(LIBFT_DIR) -I$(PRINTF_DIR)
 
 # Archivos fuente de push_swap
 SRCS = push_swap.c		\

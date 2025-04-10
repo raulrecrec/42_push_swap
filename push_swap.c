@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:05 by rexposit          #+#    #+#             */
-/*   Updated: 2025/04/08 02:10:55 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/09 17:42:11 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,6 @@ void	push_swap(int *stack_a, int size_a)
 		radix_sort(&indexed, &stack_b, &size_a, &size_b);
 		free(indexed);
 	}
-	for (int i = 0; i < size_a; i++)
-	ft_printf("%d ", stack_a[i]);
-	ft_printf("\n");
 	free(stack_b);
 }
 
@@ -167,6 +164,6 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	push_swap(stack_a, argc - 1);
-	free(stack_a);
 	return (0);
 }
+
