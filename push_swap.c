@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:05 by rexposit          #+#    #+#             */
-/*   Updated: 2025/04/09 17:42:11 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/11 21:56:33 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	push_swap(int *stack_a, int size_a)
 {
 	int	*stack_b;
 	int	size_b;
-	int	*indexed;
 
 	if (is_sorted(stack_a, size_a))
 		return ;
@@ -32,14 +31,7 @@ void	push_swap(int *stack_a, int size_a)
 		sort_five(&stack_a, &stack_b, &size_a, &size_b);
 	else if (size_a > 5)
 	{
-		indexed = convert_to_indexed(stack_a, size_a);
-		if (!indexed)
-		{
-			free(stack_b);
-			return ;
-		}
-		radix_sort(&indexed, &stack_b, &size_a, &size_b);
-		free(indexed);
+		radix_sort(&stack_a, &stack_b, &size_a, &size_b);
 	}
 	free(stack_b);
 }
