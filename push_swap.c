@@ -6,19 +6,17 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:05 by rexposit          #+#    #+#             */
-/*   Updated: 2025/04/11 21:56:33 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/13 05:17:52 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(int *stack_a, int size_a)
+void	push_swap(int **stack_a, int size_a)
 {
 	int	*stack_b;
 	int	size_b;
 
-	if (is_sorted(stack_a, size_a))
-		return ;
 	size_b = 0;
 	stack_b = malloc(0);
 	if (!stack_b)
@@ -28,10 +26,10 @@ void	push_swap(int *stack_a, int size_a)
 	else if (size_a == 3)
 		sort_three(stack_a, size_a);
 	else if (size_a > 3 && size_a <= 5)
-		sort_five(&stack_a, &stack_b, &size_a, &size_b);
+		sort_five(stack_a, &stack_b, &size_a, &size_b);
 	else if (size_a > 5)
 	{
-		radix_sort(&stack_a, &stack_b, &size_a, &size_b);
+		radix_sort(stack_a, &stack_b, &size_a, &size_b);
 	}
 	free(stack_b);
 }
@@ -155,7 +153,7 @@ int	main(int argc, char **argv)
 		free(stack_a);
 		return (0);
 	}
-	push_swap(stack_a, argc - 1);
-	return (0);
+	push_swap(&stack_a, argc - 1);
+	if (stack_a)
+		free(stack_a);
 }
-
