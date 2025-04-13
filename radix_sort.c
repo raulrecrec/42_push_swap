@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 03:59:39 by rexposit          #+#    #+#             */
-/*   Updated: 2025/04/12 20:40:37 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/12 23:36:26 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	radix_sort(int **stack_a, int **stack_b, int *size_a, int *size_b)
 			if (bit == 0)
 				push_b(stack_a, stack_b, size_a, size_b);
 			else
-				rotate_a(*stack_a, *size_a);
+				rotate_a(stack_a, *size_a);
 			j++;
 		}
 		while (*size_b > 0)
