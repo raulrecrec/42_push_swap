@@ -23,6 +23,7 @@ CFLAGS = -Wall -Wextra -Werror -g -I$(LIBFT_DIR) -I$(PRINTF_DIR)
 
 # Archivos fuente de push_swap
 SRCS = push_swap.c		\
+	push_swap_utils.c	\
 	stack_moves.c		\
 	algorithm_utils.c	\
 	radix_sort.c		\
