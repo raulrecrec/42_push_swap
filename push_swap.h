@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:08 by rexposit          #+#    #+#             */
-/*   Updated: 2025/04/15 15:50:35 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:49:09 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,19 @@ void		reverse_rotate_a(int **stack_a, int size_a);
 void		reverse_rotate_b(int **stack_b, int size_b);
 void		reverse_rotate_ab(int **stack_a, int **stack_b, int size_a, int size_b);
 
-// algorithm_utils.c
+// algorithm_three.c
 int			is_sorted(int *stack, int size);
 void		sort_three(int **stack_a, int size);
-void		sort_five(int **stack_a, int **stack_b, int *size_a, int *size_b);
+
+//algorithm_five.c
 void		find_min_stack(int *stack, int size, int *min_index);
-void		push_min_to_b_case4(int **stack_a, int **stack_b, int *size_a, int *size_b, int min_index);
-void		push_min_to_b_case5(int **stack_a, int **stack_b, int *size_a, int *size_b, int min_index);
+void		push_min_to_b_case4(int **stack_a, int **stack_b, int *size_a, int *size_b);
+void		push_min_to_b_case5(int **stack_a, int **stack_b, int *size_a, int *size_b);
+void		sort_five(int **stack_a, int **stack_b, int *size_a, int *size_b);
 
 // radix_sort.c
 int			get_max_bits(int *stack, int size);
-int			*convert_to_indexed(int *stack, int size);
+int			*convert_to_indexed(int *stack, int size, int i, int j);
 void		radix_sort(int **stack_a, int **stack_b, int *size_a, int *size_b);
 
 #endif
