@@ -6,47 +6,44 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 19:26:02 by rexposit          #+#    #+#             */
-/*   Updated: 2025/04/12 23:24:49 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:45:10 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	swap_a(int **stack_a, int size)
+void	swap_a(int **stack_a, int size)
 {
 	int	aux;
 
 	if (!*stack_a || size < 2)
-		return (0);
+		return ;
 	aux = *stack_a[0];
 	(*stack_a)[0] = (*stack_a)[1];
 	(*stack_a)[1] = aux;
 	ft_printf("sa\n");
-	return (1);
 }
-int	swap_b(int **stack_b, int size)
+void	swap_b(int **stack_b, int size)
 {
 	int	aux;
 
 	if (!*stack_b || size < 2)
-		return (0);
+		return ;
 	aux = (*stack_b)[0];
 	(*stack_b)[0] = (*stack_b)[1];
 	(*stack_b)[1] = aux;
 	ft_printf("sb\n");
-	return (1);
 }
-int	swap_ab(int **stack_a, int **stack_b, int size_a, int size_b)
+void	swap_ab(int **stack_a, int **stack_b, int size_a, int size_b)
 {
 	if (!*stack_a || !*stack_b || size_a < 2 || size_b < 2)
-		return (0);
+		return ;
 	swap_a(stack_a, size_a);
 	swap_b(stack_b, size_b);
 	ft_printf("ss\n");
-	return (1);
 }
 
-int	push_a(int **stack_a, int **stack_b, int *size_a, int *size_b)
+void	push_a(int **stack_a, int **stack_b, int *size_a, int *size_b)
 {
 	int	*new_a;
 	int	*new_b;
@@ -69,10 +66,9 @@ int	push_a(int **stack_a, int **stack_b, int *size_a, int *size_b)
 	*stack_b = new_b;
 	(*size_b)--;
 	ft_printf("pa\n");
-	return (1);
 }
 
-int	push_b(int **stack_a, int **stack_b, int *size_a, int *size_b)
+void	push_b(int **stack_a, int **stack_b, int *size_a, int *size_b)
 {
 	int	*new_a;
 	int	*new_b;
@@ -95,7 +91,6 @@ int	push_b(int **stack_a, int **stack_b, int *size_a, int *size_b)
 	*stack_a = new_a;
 	(*size_a)--;
 	ft_printf("pb\n");
-	return (1);
 }
 
 void	rotate_a(int **stack_a, int size_a)
