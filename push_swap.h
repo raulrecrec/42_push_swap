@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:08 by rexposit          #+#    #+#             */
-/*   Updated: 2025/04/13 05:28:49 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:43:12 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@
 # include "42_ft_printf/ft_printf.h"
 # include "42_libft/libft.h"
 
-// push_swap.c 
+// push_swap.c
 void		push_swap(int **stack_a, int size_a);
-long long	ft_atoll(const char *nptr);
+
+// push_swap_utils.c
 void		validate_arguments(int argc, char **argv);
 void		clean_exit(int **stack);
 void		check_duplicates(int **stack, int size);
 int			*argv_to_int(int argc, char **argv);
+long long	ft_atoll(const char *nptr);
 
 // stack_moves.c
 int			swap_a(int **stack_a, int size);
