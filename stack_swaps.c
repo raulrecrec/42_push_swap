@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_moves.c                                      :+:      :+:    :+:   */
+/*   stack_swaps.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 19:26:02 by rexposit          #+#    #+#             */
-/*   Updated: 2025/04/15 15:45:10 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:50:02 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	swap_a(int **stack_a, int size)
 	(*stack_a)[1] = aux;
 	ft_printf("sa\n");
 }
+
 void	swap_b(int **stack_b, int size)
 {
 	int	aux;
@@ -34,6 +35,7 @@ void	swap_b(int **stack_b, int size)
 	(*stack_b)[1] = aux;
 	ft_printf("sb\n");
 }
+
 void	swap_ab(int **stack_a, int **stack_b, int size_a, int size_b)
 {
 	if (!*stack_a || !*stack_b || size_a < 2 || size_b < 2)
@@ -91,70 +93,4 @@ void	push_b(int **stack_a, int **stack_b, int *size_a, int *size_b)
 	*stack_a = new_a;
 	(*size_a)--;
 	ft_printf("pb\n");
-}
-
-void	rotate_a(int **stack_a, int size_a)
-{
-	int	aux;
-
-	if (!*stack_a || size_a <= 1)
-		return ;
-	aux = (*stack_a)[0];
-	ft_memmove(*stack_a, *stack_a + 1, (size_a - 1) * sizeof(int));
-	(*stack_a)[size_a - 1] = aux;
-	ft_printf("ra\n");
-}
-
-void	rotate_b(int **stack_b, int size_b)
-{
-	int	aux;
-
-	if (!*stack_b || size_b <= 1)
-		return ;
-	aux = (*stack_b)[0];
-	ft_memmove(*stack_b, *stack_b + 1, (size_b - 1) * sizeof(int));
-	(*stack_b)[size_b - 1] = aux;
-	ft_printf("rb\n");
-}
-
-void	rotate_ab(int **stack_a, int **stack_b, int size_a, int size_b)
-{
-	if ((!*stack_a || size_a <= 1) && (!*stack_b || size_b <= 1))
-		return ;
-	rotate_a(stack_a, size_a);
-	rotate_b(stack_b, size_b);
-	ft_printf("rr\n");
-}
-
-void	reverse_rotate_a(int **stack_a, int size_a)
-{
-	int	aux;
-
-	if (!*stack_a || size_a <= 1)
-		return ;
-	aux = (*stack_a)[size_a - 1];
-	ft_memmove(*stack_a + 1, *stack_a, (size_a - 1) * sizeof(int));
-	(*stack_a)[0] = aux;
-	ft_printf("rra\n");
-}
-
-void	reverse_rotate_b(int **stack_b, int size_b)
-{
-	int	aux;
-
-	if (!*stack_b || size_b <= 1)
-		return ;
-	aux = (*stack_b)[size_b - 1];
-	ft_memmove(*stack_b + 1, *stack_b, (size_b - 1) * sizeof(int));
-	(*stack_b)[0] = aux;
-	ft_printf("rrb\n");
-}
-
-void	reverse_rotate_ab(int **stack_a, int **stack_b, int size_a, int size_b)
-{
-	if ((!*stack_a || size_a <= 1) && (!*stack_b || size_b <= 1))
-		return ;
-	reverse_rotate_a(stack_a, size_a);
-	reverse_rotate_b(stack_b, size_b);
-	ft_printf("rrr\n");
 }
