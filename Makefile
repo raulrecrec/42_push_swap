@@ -6,7 +6,7 @@
 #    By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/05 17:38:10 by rexposit          #+#    #+#              #
-#    Updated: 2025/04/15 15:52:59 by rexposit         ###   ########.fr        #
+#    Updated: 2025/04/15 16:10:53 by rexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SRCS = push_swap.c			\
 	stack_reverse_rotates.c	\
 	stack_rotates.c			\
 	stack_swaps.c			\
-	algorithm_utils.c		\
+	algorithm_three.c		\
+	algorithm_five.c		\
 	radix_sort.c			\
 
 # Convertimos los archivos .c en .o
