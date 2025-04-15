@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 19:26:02 by rexposit          #+#    #+#             */
-/*   Updated: 2025/04/15 15:50:02 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:14:43 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ void	push_a(int **stack_a, int **stack_b, int *size_a, int *size_b)
 	int	*new_b;
 
 	if (!stack_a || !*stack_a || !stack_b || !*stack_b || *size_b == 0)
-		return (0);
+		return ;
 	new_a = malloc((*size_a + 1) * sizeof(int));
 	if (!new_a)
-		return (0);
+		return ;
 	ft_memmove(new_a + 1, *stack_a, (*size_a) * sizeof(int));
 	new_a[0] = (*stack_b)[0];
 	free(*stack_a);
@@ -62,7 +62,7 @@ void	push_a(int **stack_a, int **stack_b, int *size_a, int *size_b)
 	(*size_a)++;
 	new_b = malloc((*size_b - 1) * sizeof(int));
 	if (!new_b)
-		return (0);
+		return ;
 	ft_memmove(new_b, *stack_b + 1, (*size_b - 1) * sizeof(int));
 	free(*stack_b);
 	*stack_b = new_b;
@@ -76,10 +76,10 @@ void	push_b(int **stack_a, int **stack_b, int *size_a, int *size_b)
 	int	*new_b;
 
 	if (!stack_a || !*stack_a || *size_a == 0)
-		return (0);
+		return ;
 	new_b = malloc((*size_b + 1) * sizeof(int));
 	if (!new_b)
-		return (0);
+		return ;
 	ft_memmove(new_b + 1, *stack_b, (*size_b) * sizeof(int));
 	free(*stack_b);
 	*stack_b = new_b;
@@ -87,7 +87,7 @@ void	push_b(int **stack_a, int **stack_b, int *size_a, int *size_b)
 	(*size_b)++;
 	new_a = malloc((*size_a - 1) * sizeof(int));
 	if (!new_a)
-		return (0);
+		return ;
 	ft_memmove(new_a, *stack_a + 1, (*size_a - 1) * sizeof(int));
 	free(*stack_a);
 	*stack_a = new_a;
