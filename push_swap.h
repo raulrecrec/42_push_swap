@@ -6,7 +6,7 @@
 /*   By: rexposit <rexposit@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:38:08 by rexposit          #+#    #+#             */
-/*   Updated: 2025/04/15 15:43:12 by rexposit         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:45:43 by rexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ int			*argv_to_int(int argc, char **argv);
 long long	ft_atoll(const char *nptr);
 
 // stack_moves.c
-int			swap_a(int **stack_a, int size);
-int			swap_b(int **stack_b, int size);
-int			swap_ab(int **stack_a, int **stack_b, int size_a, int size_b);
-int			push_a(int **stack_a, int **stack_b, int *size_a, int *size_b);
-int			push_b(int **stack_a, int **stack_b, int *size_a, int *size_b);
+void		swap_a(int **stack_a, int size);
+void		swap_b(int **stack_b, int size);
+void		swap_ab(int **stack_a, int **stack_b, int size_a, int size_b);
+void		push_a(int **stack_a, int **stack_b, int *size_a, int *size_b);
+void		push_b(int **stack_a, int **stack_b, int *size_a, int *size_b);
 void		rotate_a(int **stack_a, int size_a);
 void		rotate_b(int **stack_b, int size_b);
 void		rotate_ab(int **stack_a, int **stack_b, int size_a, int size_b);
